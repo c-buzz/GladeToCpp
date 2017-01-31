@@ -13,7 +13,7 @@ namespace GladeConstructor
         private string ClassName, Path;
         private BindingSource Source;
         private GtkParser GladeParser;
-        private BindingObject Objects;
+        //private BindingObject Objects;
 
         public CreateClassFiles(string classname, string path, GtkParser gladeParser, int bindingSourceId)
         {
@@ -43,7 +43,7 @@ namespace GladeConstructor
                                 "* Automatically created with BuzzGladeContructor \n" +
                                 "* Author: A. Buzz\n" +
                                 "* \n*/\n");
-                stream.WriteLine("#ifndef _" + ClassName.ToUpper() + "_H_");
+                /*stream.WriteLine("#ifndef _" + ClassName.ToUpper() + "_H_");
                 stream.WriteLine("#define _" + ClassName.ToUpper() + "_H_");
                 stream.WriteLine("\n#include \"gtkmm.h\"");
                 stream.WriteLine();
@@ -85,7 +85,7 @@ namespace GladeConstructor
                 // END OF CLASS
                 stream.WriteLine("};");
                 stream.WriteLine();
-                stream.WriteLine("#endif /* _" + ClassName.ToUpper() + "_H_");
+                stream.WriteLine("#endif /* _" + ClassName.ToUpper() + "_H_");*/
 
             }
         }
@@ -101,7 +101,7 @@ namespace GladeConstructor
                                 "* Author: A. Buzz\n" +
                                 "* \n*/\n\n");
                 
-                stream.WriteLine("#include \""+ClassName+".h\"");
+                /*stream.WriteLine("#include \""+ClassName+".h\"");
                 stream.WriteLine();
 
                 // CONSTRUCTORS
@@ -140,7 +140,7 @@ namespace GladeConstructor
 
 
 
-                // END OF CLASS
+                // END OF CLASS*/
 
             }
         }

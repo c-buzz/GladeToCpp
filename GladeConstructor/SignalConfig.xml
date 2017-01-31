@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<signal name="clicked">
+		<struct>void callback();</struct>
+		<method>signal_clicked</method>
+	</signal>
+	<signal name="focus-in-event">
+		<struct>bool callback(GdkEventFocus *focus_event);</struct>
+		<method>signal_focus_in_event</method>
+	</signal>
+	<signal name="delete-event">
+		<struct>bool callback(GdkEventAny* event)</struct>
+		<method>signal_delete_event</method>
+	</signal>
+
+  <objects>
+    <object name="Menu"></object>
+    <object name="MenuItem"></object>
+  </objects>
+</configuration>
+	

@@ -13,14 +13,7 @@ namespace GladeConstructor
         private string objectNameInClass;
         private bool addToClass;
 
-        public struct SignalStruct
-        {
-            public string type;
-            public string callback;
-        };
-
-        public List<SignalStruct> Signals = new List<SignalStruct>();
-
+        
         public BindingObject(string objId, string objType, string objNIC, bool objATC)
         {
             objectId = objId;

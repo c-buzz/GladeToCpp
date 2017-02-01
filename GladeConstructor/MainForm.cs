@@ -11,6 +11,7 @@ using WeifenLuo.WinFormsUI.Docking;
 using System.Xml;
 using System.IO;
 using GladeConstructor.GladeParser;
+using GladeConstructor.CodeBuild;
 
 namespace GladeConstructor
 {
@@ -55,6 +56,10 @@ namespace GladeConstructor
             }
         }
 
-
+        private void BuildCodeButton_Click(object sender, EventArgs e)
+        {
+            BuildCode Code = new BuildCode();
+            Code.Process();
+        }
     }
 }

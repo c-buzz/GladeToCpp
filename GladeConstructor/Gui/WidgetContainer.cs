@@ -17,6 +17,8 @@ namespace GladeConstructor.Gui
     {
         public static ObjectIDGenerator WidgetContainerId = new ObjectIDGenerator();
 
+        private BindingForm bindingForm;
+
         private bool isFirstTime;
 
         public long ID
@@ -35,7 +37,8 @@ namespace GladeConstructor.Gui
         public WidgetContainer(BindingForm form)
         {
             InitializeComponent();
-            SetDataSource(form.Widgets);
+            bindingForm = form;
+            SetDataSource(bindingForm.Widgets);
         }
 
         public void SetDataSource(BindingSource source)
@@ -51,6 +54,13 @@ namespace GladeConstructor.Gui
         private void ObjectsDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void WidgetContainer_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //GuiManager.WidgetContainersList.FindIndex(w => w.ID == this.ID);
+            GuiManager.WidgetContainersList.RemoveAll(w => w.ID == this.ID);
+            bindingForm.GUIContainerId = -1;
         }
     }
 }

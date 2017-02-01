@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,10 +11,19 @@ namespace GladeConstructor.GladeParser
 {
     public class BindingForm
     {
+        [Browsable(false)] // Hide in datagridview
         public long GUIContainerId { get; set; }
 
         public string Id { get; set; }
+
+        /// <summary>
+        ///     C++ Class name referring to the current Window Form
+        /// </summary>
         public string Class { get; set; }
+
+        /// <summary>
+        ///     It establish whether the C++ class is to be created or not
+        /// </summary>
         public bool CodeProcess { get; set; }
 
         // List of widgets belonging to the Window. To be built into GtkParser

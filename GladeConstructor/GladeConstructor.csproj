@@ -47,6 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CodeBuild\BuildHeaders.cs" />
+    <Compile Include="CodeBuild\BuildCode.cs" />
+    <Compile Include="CodeBuild\Utils.cs" />
     <Compile Include="GladeParser\BindingForm.cs" />
     <Compile Include="GladeParser\BindingObject.cs" />
     <Compile Include="CreateClassFiles.cs" />
@@ -115,6 +118,7 @@
       <Name>WinFormsUI</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -104,6 +104,7 @@
             this.ClientSize = new System.Drawing.Size(410, 252);
             this.Controls.Add(this.ObjectsDataGrid);
             this.Name = "WidgetContainer";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WidgetContainer_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.ObjectsDataGrid)).EndInit();
             this.ResumeLayout(false);
 

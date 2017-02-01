@@ -1,17 +1,7 @@
-﻿using System;
-using System.Runtime.Serialization;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GladeConstructor.GladeParser
+﻿namespace GladeConstructor.GladeParser
 {
     public class BindingWidget
     {
-        //public static ObjectIDGenerator ObjectIdGen { get; set; }
-        
-
         public BindingWidget(string id, string name, string variableName, bool addToClass = true)
         {
             Id = id;

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.gladeFileOpen = new System.Windows.Forms.OpenFileDialog();
             this.ClassFileDirectoryChooseButton = new System.Windows.Forms.Button();
             this.folderBrowserClass = new System.Windows.Forms.FolderBrowserDialog();
@@ -41,9 +42,11 @@
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.dockPanel1 = new WeifenLuo.WinFormsUI.Docking.DockPanel();
+            this.BuildCodeButton = new System.Windows.Forms.ToolStripButton();
             this.contextMenuStrip1.SuspendLayout();
             this.FormMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gladeFileOpen
@@ -109,6 +112,8 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.BuildCodeButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(645, 25);
@@ -122,6 +127,16 @@
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.Size = new System.Drawing.Size(645, 279);
             this.dockPanel1.TabIndex = 15;
+            // 
+            // BuildCodeButton
+            // 
+            this.BuildCodeButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.BuildCodeButton.Image = ((System.Drawing.Image)(resources.GetObject("BuildCodeButton.Image")));
+            this.BuildCodeButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BuildCodeButton.Name = "BuildCodeButton";
+            this.BuildCodeButton.Size = new System.Drawing.Size(94, 22);
+            this.BuildCodeButton.Text = "Build C++ code";
+            this.BuildCodeButton.Click += new System.EventHandler(this.BuildCodeButton_Click);
             // 
             // MainForm
             // 
@@ -139,6 +154,8 @@
             this.FormMenu.ResumeLayout(false);
             this.FormMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,6 +174,7 @@
         private System.Windows.Forms.ToolStripMenuItem closeGladeFileToolStripMenuItem;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private WeifenLuo.WinFormsUI.Docking.DockPanel dockPanel1;
+        private System.Windows.Forms.ToolStripButton BuildCodeButton;
     }
 }
 

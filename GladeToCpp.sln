@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GladeConstructor", "GladeConstructor\GladeConstructor.csproj", "{DFCB138F-D59B-4026-872B-511080F76C5E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GladeToCpp", "GladeToCpp\GladeToCpp.csproj", "{DFCB138F-D59B-4026-872B-511080F76C5E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsUI", "..\..\..\..\Source\Repos\dockpanelsuite\WinFormsUI\WinFormsUI.csproj", "{C75532C4-765B-418E-B09B-46D36B2ABDB1}"
 EndProject

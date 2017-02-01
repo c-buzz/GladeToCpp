@@ -8,11 +8,13 @@ using System.Xml;
 
 namespace GladeConstructor.GladeParser
 {
-    class BindingForm
+    public class BindingForm
     {
-        private string id, classname;
-        public string Id { get { return id; } set { id = value; } }
-        public string Class { get { return classname; } set { classname = value; } }
+        public long GUIContainerId { get; set; }
+
+        public string Id { get; set; }
+        public string Class { get; set; }
+        public bool CodeProcess { get; set; }
 
         // List of widgets belonging to the Window. To be built into GtkParser
         public BindingSource Widgets = new BindingSource();
@@ -25,6 +27,8 @@ namespace GladeConstructor.GladeParser
             ParseFormNode(xmlNode);
             // Class name is initialized to Form id
             Class = Id;
+            CodeProcess = true;
+            GUIContainerId = -1;
         }
 
         private string GetId(XmlNode xmlNode)
@@ -37,11 +41,12 @@ namespace GladeConstructor.GladeParser
             {
                 return null;
             }
+
         }
 
         private void ParseFormNode(XmlNode formNode)
         {
-            XmlNodeList xnList = formNode.SelectNodes(".//object");//[@id='"+Id+"']/object");
+            XmlNodeList xnList = formNode.SelectNodes(".//object");
             foreach (XmlNode node in xnList)
             {
                 // ToDo: Consider also idless node

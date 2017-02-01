@@ -9,11 +9,9 @@ using GladeConstructor.GladeParser;
 
 namespace GladeConstructor
 {
-    class GtkParser
+    public class GtkParser
     {
-        /*private XmlReader reader;
-        public List<string> GtkWindowsId;*/
-                
+
         /*
          * ToDo: For the moment, only widgets, windows and objects with a valid id will be considered
          * */

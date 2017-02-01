@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -49,11 +50,24 @@
     <Compile Include="GladeParser\BindingForm.cs" />
     <Compile Include="GladeParser\BindingObject.cs" />
     <Compile Include="CreateClassFiles.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Gui\GuiManager.cs" />
+    <Compile Include="Gui\WidgetContainer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Gui\WidgetContainer.Designer.cs">
+      <DependentUpon>WidgetContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\WindowContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\WindowContainer.Designer.cs">
+      <DependentUpon>WindowContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GladeParser\BindingWidget.cs" />
     <Compile Include="GladeParser\GtkParser.cs" />
@@ -61,8 +75,14 @@
     <Compile Include="MakeObjectsTable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Gui\WidgetContainer.resx">
+      <DependentUpon>WidgetContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\WindowContainer.resx">
+      <DependentUpon>WindowContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -88,6 +108,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="SignalConfig.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Source\Repos\dockpanelsuite\WinFormsUI\WinFormsUI.csproj">
+      <Project>{C75532C4-765B-418E-B09B-46D36B2ABDB1}</Project>
+      <Name>WinFormsUI</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="CodeBuild\BuildHeaders.cs" />
     <Compile Include="CodeBuild\BuildCode.cs" />
+    <Compile Include="CodeBuild\StreamIOManager.cs" />
     <Compile Include="CodeBuild\Utils.cs" />
     <Compile Include="GladeParser\BindingForm.cs" />
     <Compile Include="GladeParser\BindingObject.cs" />

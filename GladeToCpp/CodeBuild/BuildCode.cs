@@ -11,7 +11,6 @@ namespace GladeConstructor.CodeBuild
     class BuildCode
     {
         
-
         public BuildCode()
         {
             
@@ -19,7 +18,9 @@ namespace GladeConstructor.CodeBuild
 
         public void Process()
         {
-            BuildHeaders buildHeaders = new BuildHeaders();
+            System.IO.Directory.CreateDirectory(Application.StartupPath + "\\src\\");
+            BuildHeaders buildHeaders = new BuildHeaders(Application.StartupPath + "\\src\\");
+            buildHeaders.ProcessHeaders();
         }
     }
 }

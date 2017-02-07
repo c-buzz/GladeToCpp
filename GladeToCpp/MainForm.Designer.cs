@@ -33,20 +33,17 @@
             this.gladeFileOpen = new System.Windows.Forms.OpenFileDialog();
             this.ClassFileDirectoryChooseButton = new System.Windows.Forms.Button();
             this.folderBrowserClass = new System.Windows.Forms.FolderBrowserDialog();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FormMenu = new System.Windows.Forms.MenuStrip();
             this.FormMenuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.closeGladeFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.dockPanel1 = new WeifenLuo.WinFormsUI.Docking.DockPanel();
             this.BuildCodeButton = new System.Windows.Forms.ToolStripButton();
-            this.contextMenuStrip1.SuspendLayout();
+            this.MainDockPanel = new WeifenLuo.WinFormsUI.Docking.DockPanel();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.FormMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // gladeFileOpen
@@ -57,7 +54,7 @@
             // ClassFileDirectoryChooseButton
             // 
             this.ClassFileDirectoryChooseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ClassFileDirectoryChooseButton.Location = new System.Drawing.Point(-196, 4);
+            this.ClassFileDirectoryChooseButton.Location = new System.Drawing.Point(-369, 4);
             this.ClassFileDirectoryChooseButton.Name = "ClassFileDirectoryChooseButton";
             this.ClassFileDirectoryChooseButton.Size = new System.Drawing.Size(28, 20);
             this.ClassFileDirectoryChooseButton.TabIndex = 10;
@@ -65,26 +62,13 @@
             this.ClassFileDirectoryChooseButton.UseVisualStyleBackColor = true;
             this.ClassFileDirectoryChooseButton.Click += new System.EventHandler(this.ClassFileDirectoryChooseButton_Click);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(104, 26);
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
-            this.openToolStripMenuItem.Text = "Open";
-            // 
             // FormMenu
             // 
             this.FormMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FormMenuFile});
             this.FormMenu.Location = new System.Drawing.Point(0, 0);
             this.FormMenu.Name = "FormMenu";
-            this.FormMenu.Size = new System.Drawing.Size(645, 24);
+            this.FormMenu.Size = new System.Drawing.Size(472, 24);
             this.FormMenu.TabIndex = 6;
             this.FormMenu.Text = "Form Menu";
             // 
@@ -99,6 +83,7 @@
             // 
             // openToolStripMenuItem1
             // 
+            this.openToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem1.Image")));
             this.openToolStripMenuItem1.Name = "openToolStripMenuItem1";
             this.openToolStripMenuItem1.Size = new System.Drawing.Size(157, 22);
             this.openToolStripMenuItem1.Text = "Open";
@@ -116,17 +101,9 @@
             this.BuildCodeButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(645, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(472, 25);
             this.toolStrip1.TabIndex = 14;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // dockPanel1
-            // 
-            this.dockPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dockPanel1.Location = new System.Drawing.Point(0, 24);
-            this.dockPanel1.Name = "dockPanel1";
-            this.dockPanel1.Size = new System.Drawing.Size(645, 279);
-            this.dockPanel1.TabIndex = 15;
             // 
             // BuildCodeButton
             // 
@@ -138,24 +115,31 @@
             this.BuildCodeButton.Text = "Build C++ code";
             this.BuildCodeButton.Click += new System.EventHandler(this.BuildCodeButton_Click);
             // 
+            // MainDockPanel
+            // 
+            this.MainDockPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainDockPanel.Location = new System.Drawing.Point(0, 24);
+            this.MainDockPanel.Name = "MainDockPanel";
+            this.MainDockPanel.Size = new System.Drawing.Size(472, 222);
+            this.MainDockPanel.TabIndex = 15;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(645, 303);
+            this.ClientSize = new System.Drawing.Size(472, 246);
             this.Controls.Add(this.ClassFileDirectoryChooseButton);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.dockPanel1);
+            this.Controls.Add(this.MainDockPanel);
             this.Controls.Add(this.FormMenu);
             this.IsMdiContainer = true;
             this.Name = "MainForm";
             this.Text = "GladeConstructor";
-            this.contextMenuStrip1.ResumeLayout(false);
             this.FormMenu.ResumeLayout(false);
             this.FormMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,18 +147,16 @@
 
         #endregion
         private System.Windows.Forms.OpenFileDialog gladeFileOpen;
-        private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.Button ClassFileDirectoryChooseButton;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserClass;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.MenuStrip FormMenu;
         private System.Windows.Forms.ToolStripMenuItem FormMenuFile;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem closeGladeFileToolStripMenuItem;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private WeifenLuo.WinFormsUI.Docking.DockPanel dockPanel1;
+        private WeifenLuo.WinFormsUI.Docking.DockPanel MainDockPanel;
         private System.Windows.Forms.ToolStripButton BuildCodeButton;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }
 

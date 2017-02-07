@@ -1,0 +1,104 @@
+  /// This is a default handler for the signal signal_show().
+  virtual void on_show();
+  /// This is a default handler for the signal signal_hide().
+  virtual void on_hide();
+  /// This is a default handler for the signal signal_map().
+  virtual void on_map();
+  /// This is a default handler for the signal signal_unmap().
+  virtual void on_unmap();
+  /// This is a default handler for the signal signal_realize().
+  virtual void on_realize();
+  /// This is a default handler for the signal signal_unrealize().
+  virtual void on_unrealize();
+  /// This is a default handler for the signal signal_size_allocate().
+  virtual void on_size_allocate(Allocation& allocation);
+  /// This is a default handler for the signal signal_state_changed().
+  virtual void on_state_changed(Gtk::StateType previous_state);
+  /// This is a default handler for the signal signal_parent_changed().
+  virtual void on_parent_changed(Widget* previous_parent);
+  /// This is a default handler for the signal signal_hierarchy_changed().
+  virtual void on_hierarchy_changed(Widget* previous_toplevel);
+  /// This is a default handler for the signal signal_style_updated().
+  virtual void on_style_updated();
+  /// This is a default handler for the signal signal_direction_changed().
+  virtual void on_direction_changed(TextDirection direction);
+  /// This is a default handler for the signal signal_grab_notify().
+  virtual void on_grab_notify(bool was_grabbed);
+  /// This is a default handler for the signal signal_child_notify().
+  virtual void on_child_notify(GParamSpec* pspec);
+  /// This is a default handler for the signal signal_mnemonic_activate().
+  virtual bool on_mnemonic_activate(bool group_cycling);
+  /// This is a default handler for the signal signal_grab_focus().
+  virtual void on_grab_focus();
+  /// This is a default handler for the signal signal_focus().
+  virtual bool on_focus(DirectionType direction);
+  /// This is a default handler for the signal signal_event().
+  virtual bool on_event(GdkEvent* gdk_event);
+  /// This is a default handler for the signal signal_button_press_event().
+  virtual bool on_button_press_event(GdkEventButton* button_event);
+  /// This is a default handler for the signal signal_button_release_event().
+  virtual bool on_button_release_event(GdkEventButton* release_event);
+  /// This is a default handler for the signal signal_scroll_event().
+  virtual bool on_scroll_event(GdkEventScroll* scroll_event);
+  /// This is a default handler for the signal signal_motion_notify_event().
+  virtual bool on_motion_notify_event(GdkEventMotion* motion_event);
+  /// This is a default handler for the signal signal_delete_event().
+  virtual bool on_delete_event(GdkEventAny* any_event);
+  /// This is a default handler for the signal signal_draw().
+  virtual bool on_draw(const ::Cairo::RefPtr< ::Cairo::Context>& cr);
+  /// This is a default handler for the signal signal_key_press_event().
+  virtual bool on_key_press_event(GdkEventKey* key_event);
+  /// This is a default handler for the signal signal_key_release_event().
+  virtual bool on_key_release_event(GdkEventKey* key_event);
+  /// This is a default handler for the signal signal_enter_notify_event().
+  virtual bool on_enter_notify_event(GdkEventCrossing* crossing_event);
+  /// This is a default handler for the signal signal_leave_notify_event().
+  virtual bool on_leave_notify_event(GdkEventCrossing* crossing_event);
+  /// This is a default handler for the signal signal_configure_event().
+  virtual bool on_configure_event(GdkEventConfigure* configure_event);
+  /// This is a default handler for the signal signal_focus_in_event().
+  virtual bool on_focus_in_event(GdkEventFocus* focus_event);
+  /// This is a default handler for the signal signal_focus_out_event().
+  virtual bool on_focus_out_event(GdkEventFocus* gdk_event);
+  /// This is a default handler for the signal signal_map_event().
+  virtual bool on_map_event(GdkEventAny* any_event);
+  /// This is a default handler for the signal signal_unmap_event().
+  virtual bool on_unmap_event(GdkEventAny* any_event);
+  /// This is a default handler for the signal signal_property_notify_event().
+  virtual bool on_property_notify_event(GdkEventProperty* property_event);
+  /// This is a default handler for the signal signal_selection_clear_event().
+  virtual bool on_selection_clear_event(GdkEventSelection* selection_event);
+  /// This is a default handler for the signal signal_selection_request_event().
+  virtual bool on_selection_request_event(GdkEventSelection* selection_event);
+  /// This is a default handler for the signal signal_selection_notify_event().
+  virtual bool on_selection_notify_event(GdkEventSelection* selection_event);
+  /// This is a default handler for the signal signal_proximity_in_event().
+  virtual bool on_proximity_in_event(GdkEventProximity* proximity_event);
+  /// This is a default handler for the signal signal_proximity_out_event().
+  virtual bool on_proximity_out_event(GdkEventProximity* proximity_event);
+  /// This is a default handler for the signal signal_visibility_notify_event().
+  virtual bool on_visibility_notify_event(GdkEventVisibility* visibility_event);
+  /// This is a default handler for the signal signal_window_state_event().
+  virtual bool on_window_state_event(GdkEventWindowState* window_state_event);
+  /// This is a default handler for the signal signal_selection_get().
+  virtual void on_selection_get(SelectionData& selection_data, guint info, guint time);
+  /// This is a default handler for the signal signal_selection_received().
+  virtual void on_selection_received(const SelectionData& selection_data, guint time);
+  /// This is a default handler for the signal signal_drag_begin().
+  virtual void on_drag_begin(const Glib::RefPtr<Gdk::DragContext>& context);
+  /// This is a default handler for the signal signal_drag_end().
+  virtual void on_drag_end(const Glib::RefPtr<Gdk::DragContext>& context);
+  /// This is a default handler for the signal signal_drag_data_get().
+  virtual void on_drag_data_get(const Glib::RefPtr<Gdk::DragContext>& context, SelectionData& selection_data, guint info, guint time);
+  /// This is a default handler for the signal signal_drag_data_delete().
+  virtual void on_drag_data_delete(const Glib::RefPtr<Gdk::DragContext>& context);
+  /// This is a default handler for the signal signal_drag_leave().
+  virtual void on_drag_leave(const Glib::RefPtr<Gdk::DragContext>& context, guint time);
+  /// This is a default handler for the signal signal_drag_motion().
+  virtual bool on_drag_motion(const Glib::RefPtr<Gdk::DragContext>& context, int x, int y, guint time);
+  /// This is a default handler for the signal signal_drag_drop().
+  virtual bool on_drag_drop(const Glib::RefPtr<Gdk::DragContext>& context, int x, int y, guint time);
+  /// This is a default handler for the signal signal_drag_data_received().
+  virtual void on_drag_data_received(const Glib::RefPtr<Gdk::DragContext>& context, int x, int y, const SelectionData& selection_data, guint info, guint time);
+  /// This is a default handler for the signal signal_screen_changed().
+  virtual void on_screen_changed(const Glib::RefPtr<Gdk::Screen>& previous_screen);

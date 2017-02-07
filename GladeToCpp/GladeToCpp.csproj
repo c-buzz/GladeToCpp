@@ -49,11 +49,23 @@
   <ItemGroup>
     <Compile Include="CodeBuild\BuildHeaders.cs" />
     <Compile Include="CodeBuild\BuildCode.cs" />
+    <Compile Include="CodeBuild\BuildSource.cs" />
     <Compile Include="CodeBuild\StreamIOManager.cs" />
     <Compile Include="CodeBuild\Utils.cs" />
-    <Compile Include="GladeParser\BindingForm.cs" />
-    <Compile Include="GladeParser\BindingObject.cs" />
-    <Compile Include="CreateClassFiles.cs" />
+    <Compile Include="ConfigurationResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConfigurationResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\SignalContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\SignalContainer.Designer.cs">
+      <DependentUpon>SignalContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parser\BindingForm.cs" />
+    <Compile Include="Parser\BindingObject.cs" />
+    <Compile Include="Parser\Storage.cs" />
     <Compile Include="Gui\GuiManager.cs" />
     <Compile Include="Gui\WidgetContainer.cs">
       <SubType>Form</SubType>
@@ -73,12 +85,19 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GladeParser\BindingWidget.cs" />
-    <Compile Include="GladeParser\GtkParser.cs" />
-    <Compile Include="GladeParser\BindingSignal.cs" />
+    <Compile Include="Parser\BindingWidget.cs" />
+    <Compile Include="Parser\GladeParser.cs" />
+    <Compile Include="Parser\BindingSignal.cs" />
     <Compile Include="MakeObjectsTable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ConfigurationResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ConfigurationResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\SignalContainer.resx">
+      <DependentUpon>SignalContainer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gui\WidgetContainer.resx">
       <DependentUpon>WidgetContainer.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,15 +130,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SignalConfig.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\Source\Repos\dockpanelsuite\WinFormsUI\WinFormsUI.csproj">
       <Project>{C75532C4-765B-418E-B09B-46D36B2ABDB1}</Project>
       <Name>WinFormsUI</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="config.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\config.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\signals.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

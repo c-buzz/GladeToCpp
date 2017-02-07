@@ -8,22 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
-using GladeConstructor.GladeParser;
+using GladeConstructor.Parser;
 
 namespace GladeConstructor.Gui
 {
     public partial class WindowContainer : DockContent
     {
-        public GtkParser gladeParser { get; set; }
-        
+        private int RightClickedCell = -1;
+
         public WindowContainer()
         {
-            InitializeComponent();
-        }
-
-        public WindowContainer(GtkParser parser)
-        {
-            gladeParser = parser;
             InitializeComponent();
         }
 
@@ -46,10 +40,46 @@ namespace GladeConstructor.Gui
         {
             // Open a new form with the corresponding widget lists
             var pressed_cell = e.RowIndex;
-            BindingForm source = (BindingForm)gladeParser.FormBindingSources[pressed_cell];
+            BindingForm source = (BindingForm)Storage.Parser.FormBindingSources[pressed_cell];
             var WidgetContainer = GuiManager.CreateWidgetPanel(source);
 
             
+        }
+
+        private void GtkWindowsDataGridMenuStrip_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void showSignalsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (RightClickedCell >= 0)
+            {
+                var signalContainer = GuiManager.CreateSignalPanel(Storage.Parser.FormBindingSources[RightClickedCell] as BindingForm);
+                //signalContainer.SetDataSource()
+            }
+        }
+
+        private void FormGridView_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void FormGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+        }
+
+        private void GtkWindowsDataGridMenuStrip_Closed(object sender, ToolStripDropDownClosedEventArgs e)
+        {
+            //RightClickedCell = -2;
+        }
+
+        private void FormGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                RightClickedCell = e.RowIndex;
+            }
         }
     }
 }

@@ -26,12 +26,9 @@ namespace GladeConstructor.CodeBuild
         public long WriteListOfStringIntoStream(List<string> list, bool update_buffer_position = true)
         {
             // Merge the list in a single string separated by a new line \n
-            string text = String.Join<string>("\n", list);
+            string text = String.Join<string>("\n", list) + "\n";
 
-            // Create byte array from text
-            byte[] buffer = Encoding.ASCII.GetBytes(text);
-
-            return WriteByteArrayIntoStream(buffer);
+            return WriteTextIntoStream(text);
         }
 
         public long WriteListOfStringIntoStream(List<string> list, long position, bool update_buffer_position = true)

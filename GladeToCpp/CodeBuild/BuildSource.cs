@@ -1,16 +1,18 @@
 ﻿using System;
-using System.IO;
-using System.Text;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using GladeConstructor.Parser;
-using GladeConstructor.CodeBuild;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GladeConstructor.CodeBuild
 {
-    class BuildHeaders
+    /// <summary>
+    ///     Writing of .cpp source file
+    /// </summary>
+    class BuildSource
     {
         long CurrentBufferPosition = 0;
 
@@ -20,95 +22,116 @@ namespace GladeConstructor.CodeBuild
 
         string SourcePath;
 
-        public BuildHeaders(string path)
+        public BuildSource(string path)
         {
             DataSource = Storage.Parser.FormBindingSources;
             SourcePath = path;
         }
 
-        public void ProcessHeaders()
+        public void ProcessSources()
         {
             foreach (var objForm in DataSource)
             {
                 var form = (BindingForm)objForm;
-                
+
                 if (form.CodeProcess)
                 {
                     CurrentForm = form;
-                    BuildHeader(form);
+                    ProcessSingleSource(form);
                 }
             }
         }
 
-        private void BuildHeader(BindingForm form)
+        public void ProcessSingleSource(BindingForm form)
         {
             //Initialize the stream for the current class
-            form.HeaderCodeStream = new MemoryStream();
+            form.SourceCodeStream = new MemoryStream();
             // Initialize the IOManager for current Form form
-            IOManager = new StreamIOManager(form.HeaderCodeStream);
+            IOManager = new StreamIOManager(form.SourceCodeStream);
 
-            // Head
-            WriteHead(CurrentForm.Class);
+            // Constructor
+            WriteConstructors(form);
 
-            // Public methods and vars
-            WriteConstructor(form.Class);
-            WriteConstructor(form.Class, "Glib::Dispatcher *dispatcher");
-            WriteVariable(new Utils.CppVariable("Gtk::Window", "window", true));
-            WritePrototype("void", "Show");
-            WritePrototype("void", "Hide");
-            WritePrototype("void", "Close");
+            // InitComponents
+            WriteInitComponents(form);
 
-            // Private members
-            WriteText(Utils.Tabs(1) + "private:");
-            //Widgets
-            WriteWidgetStruct();
-            WritePrototype("void","Init");
+            // Show function
+            WriteText(form.Class + "::" + "Show() {");
+            WriteText(Utils.Tabs(1) + "window->show();");
+            WriteText("}\n");
 
+            // Close function
+            WriteText(form.Class + "::" + "Close() {");
+            WriteText(Utils.Tabs(1) + "window->close();");
+            WriteText("}\n");
 
-            //TODO CALLBACKS SIGNAL
+            // Hide function
+            WriteText(form.Class + "::" + "Hide() {");
+            WriteText(Utils.Tabs(1) + "window->hide();");
+            WriteText("}\n");
+
+            // Signal callbacks
             WriteSignalsCallback(form);
 
             // Write to file
-            IOManager.StreamToFile(SourcePath + CurrentForm.Class + ".h");
+            IOManager.StreamToFile(SourcePath + CurrentForm.Class + ".cpp");
         }
 
         private void WriteSignalsCallback(BindingForm form)
         {
             // Form signals
-            WriteText(Utils.Tabs(1) + "// GtkWindow signals Callback");
+            WriteText("// GtkWindow signals Callback");
             foreach (BindingSignal signal in form.Signals)
             {
-                WriteText(Utils.Tabs(1) + signal.Prototype);
+                WriteText(signal.BuildSourceCallback(form.Class) + "{");
+                WriteText(Utils.Tabs(1) + "// Callback code");
+                WriteText("}\n");
             }
             WriteText("");
 
-            WriteText(Utils.Tabs(1) + "// --- Widgets signals Callbacks");
+            WriteText("// --- Widgets signals Callbacks");
             foreach (BindingWidget widget in form.Widgets)
             {
-                WriteText(Utils.Tabs(1) + "// Callbacks for Widget " + widget.Id);
-                if (widget.Signals != null)
+                WriteText("// Signal callbacks for Widget " + widget.Id);
+                foreach (BindingSignal signal in widget.Signals)
                 {
-                    foreach (BindingSignal signal in widget.Signals)
-                    {
-                        WriteText(Utils.Tabs(1) + signal.Prototype);
-                    }
+                    WriteText(signal.BuildSourceCallback(form.Class) + "{");
+                    WriteText(Utils.Tabs(1) + "// Callback code");
+                    WriteText("}\n");
                 }
-                
                 WriteText("");
             }
         }
 
-        private void WriteWidgetStruct(string struct_name = "_struct", string widget_varname = "widgets")
+        private void WriteConstructors(BindingForm form)
         {
-            WriteText(Utils.Tabs(2) + "struct _widgets {");
-            foreach (BindingWidget widgets in CurrentForm.Widgets)
+            WriteText(form.Class + "::" + form.Class + "() {");
+            WriteText(Utils.Tabs(1) + "InitComponents();");
+            WriteText("}");
+            WriteText("");
+
+            WriteText(form.Class + "::" + form.Class + "(Glib::Dispatcher *dispatcher) {");
+            WriteText(Utils.Tabs(1) + form.Class + "Dispatcher = dispatcher;");
+            WriteText("}");
+            WriteText("");
+        }
+
+        private void WriteInitComponents(BindingForm form)
+        {
+            WriteText(form.Class + "::" + "InitComponents() {");
+            WriteText(Utils.Tabs(1) + "builder->get_widget(\"" + form.Id + "\", window);");
+            WriteText("");
+            WriteText(Utils.Tabs(1) + "// Widgets initialisation");
+            List<string> initcomplist = new List<string>();
+            foreach (BindingWidget widget in form.Widgets)
             {
-                if (widgets.AddToClass)
+                if (widget.AddToClass)
                 {
-                    WriteVariable(new Utils.CppVariable("Gtk::" + widgets.Name, widgets.VariableName, true),3);
+                    initcomplist.Add(Utils.Tabs(1) + "builder->get_widget(\"" + widget.Name + "\"," + widget.VariableName + ");");
                 }
             }
-            WriteText(Utils.Tabs(2) + "} " + widget_varname + ";");
+            IOManager.WriteListOfStringIntoStream(initcomplist);
+            WriteText("}");
         }
 
         private void WriteText(string text, bool ret = true)

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GladeConstructor.GladeParser;
+using GladeConstructor.Parser;
 using System.Windows.Forms;
 
 namespace GladeConstructor.CodeBuild
@@ -18,9 +18,12 @@ namespace GladeConstructor.CodeBuild
 
         public void Process()
         {
-            System.IO.Directory.CreateDirectory(Application.StartupPath + "\\src\\");
-            BuildHeaders buildHeaders = new BuildHeaders(Application.StartupPath + "\\src\\");
+            string path = Application.StartupPath + "\\src\\";
+            System.IO.Directory.CreateDirectory(path);
+            BuildHeaders buildHeaders = new BuildHeaders(path);
+            BuildSource buildSource = new BuildSource(path);
             buildHeaders.ProcessHeaders();
+            buildSource.ProcessSources();
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GladeConstructor.GladeParser;
+using GladeConstructor.Parser;
 using WeifenLuo.WinFormsUI.Docking;
 
 namespace GladeConstructor.Gui
@@ -16,8 +16,6 @@ namespace GladeConstructor.Gui
     public partial class WidgetContainer : DockContent
     {
         public static ObjectIDGenerator WidgetContainerId = new ObjectIDGenerator();
-
-        private BindingForm bindingForm;
 
         private bool isFirstTime;
 
@@ -29,6 +27,8 @@ namespace GladeConstructor.Gui
             }
         }
 
+        private BindingForm bindingForm;
+        
         public WidgetContainer()
         {
             InitializeComponent();

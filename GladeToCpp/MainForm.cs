@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 using System.Xml;
 using System.IO;
-using GladeConstructor.GladeParser;
+using GladeConstructor.Parser;
 using GladeConstructor.CodeBuild;
 
 namespace GladeConstructor
@@ -18,11 +18,12 @@ namespace GladeConstructor
 
     public partial class MainForm : Form
     {
-        GtkParser gladeParser;
+        GladeParser gladeParser;
 
         public MainForm()
         {
             InitializeComponent();
+            Storage.LoadConfigurationDocument();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -30,7 +31,7 @@ namespace GladeConstructor
             if (gladeFileOpen.ShowDialog() == DialogResult.OK)
             {
                 string FileName = gladeFileOpen.FileName;
-                gladeParser = new GtkParser(FileName);   
+                gladeParser = new GladeParser(FileName);   
             }
 
         }
@@ -47,12 +48,7 @@ namespace GladeConstructor
         {
             if (gladeFileOpen.ShowDialog() == DialogResult.OK)
             {
-                string FileName = gladeFileOpen.FileName;
-                gladeParser = new GtkParser(FileName);
-                GuiManager.Parser = gladeParser;
-                GuiManager.dockPanel = this.dockPanel1;
-                var WidgetForm = GuiManager.CreateWindowPanel(gladeParser.FormBindingSources);
-                WidgetForm.Show(dockPanel1, DockState.Document);
+                OpenGladeFile(gladeFileOpen.FileName);
             }
         }
 
@@ -60,6 +56,15 @@ namespace GladeConstructor
         {
             BuildCode Code = new BuildCode();
             Code.Process();
+        }
+
+        private void OpenGladeFile(string FileName)
+        {
+            gladeParser = new GladeParser(FileName);
+            Storage.Parser = gladeParser;
+            GuiManager.dockPanel = MainDockPanel;
+            var WidgetForm = GuiManager.CreateWindowPanel(Storage.Parser.FormBindingSources, FileName);
+            WidgetForm.Show(MainDockPanel, DockState.Document);
         }
     }
 }

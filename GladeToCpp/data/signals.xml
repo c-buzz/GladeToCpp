@@ -1,0 +1,911 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<signals>
+  <signal name="activate-link" caller="aboutdialog">
+    <method>signal_activate_link()</method>
+    <prototype>bool on_activate_link(const std::string&amp; uri)</prototype>
+  </signal>
+  <signal name="activate" caller="action">
+    <method>signal_activate()</method>
+    <prototype>void on_activate()</prototype>
+  </signal>
+  <signal name="changed" caller="adjustment">
+    <method>signal_changed()</method>
+    <prototype>void on_changed()</prototype>
+  </signal>
+  <signal name="value-changed" caller="adjustment">
+    <method>signal_value_changed()</method>
+    <prototype>void on_value_changed()</prototype>
+  </signal>
+  <signal name="custom-item-activated" caller="appchooserbutton">
+    <method>signal_custom_item_activated()</method>
+    <prototype>void on_custom_item_activated(const Glib::ustring&amp; item_name)</prototype>
+  </signal>
+  <signal name="application-selected" caller="appchooserwidget">
+    <method>signal_application_selected()</method>
+    <prototype>void on_application_selected(const Glib::RefPtr&lt;Gio::AppInfo&gt;&amp; app_info)</prototype>
+  </signal>
+  <signal name="application-activated" caller="appchooserwidget">
+    <method>signal_application_activated()</method>
+    <prototype>void on_application_activated(const Glib::RefPtr&lt;Gio::AppInfo&gt;&amp; app_info)</prototype>
+  </signal>
+  <signal name="populate-popup" caller="appchooserwidget">
+    <method>signal_populate_popup()</method>
+    <prototype>void on_populate_popup(Menu* menu, const Glib::RefPtr&lt;Gio::AppInfo&gt;&amp; app_info)</prototype>
+  </signal>
+  <signal name="window-added" caller="application">
+    <method>signal_window_added()</method>
+    <prototype>void on_window_added(Window* window)</prototype>
+  </signal>
+  <signal name="window-removed" caller="application">
+    <method>signal_window_removed()</method>
+    <prototype>void on_window_removed(Window* window)</prototype>
+  </signal>
+  <signal name="prepare" caller="assistant">
+    <method>signal_prepare()</method>
+    <prototype>void on_prepare(Gtk::Widget* page)</prototype>
+  </signal>
+  <signal name="apply" caller="assistant">
+    <method>signal_apply()</method>
+    <prototype>void on_apply()</prototype>
+  </signal>
+  <signal name="close" caller="assistant">
+    <method>signal_close()</method>
+    <prototype>void on_close()</prototype>
+  </signal>
+  <signal name="cancel" caller="assistant">
+    <method>signal_cancel()</method>
+    <prototype>void on_cancel()</prototype>
+  </signal>
+  <signal name="pressed" caller="button">
+    <method>signal_pressed()</method>
+    <prototype>void on_pressed()</prototype>
+  </signal>
+  <signal name="released" caller="button">
+    <method>signal_released()</method>
+    <prototype>void on_released()</prototype>
+  </signal>
+  <signal name="clicked" caller="button">
+    <method>signal_clicked()</method>
+    <prototype>void on_clicked()</prototype>
+  </signal>
+  <signal name="enter" caller="button">
+    <method>signal_enter()</method>
+    <prototype>void on_enter()</prototype>
+  </signal>
+  <signal name="leave" caller="button">
+    <method>signal_leave()</method>
+    <prototype>void on_leave()</prototype>
+  </signal>
+  <signal name="activate" caller="button">
+    <method>signal_activate()</method>
+    <prototype>void on_activate()</prototype>
+  </signal>
+  <signal name="month-changed" caller="calendar">
+    <method>signal_month_changed()</method>
+    <prototype>void on_month_changed()</prototype>
+  </signal>
+  <signal name="day-selected" caller="calendar">
+    <method>signal_day_selected()</method>
+    <prototype>void on_day_selected()</prototype>
+  </signal>
+  <signal name="day-selected-double-click" caller="calendar">
+    <method>signal_day_selected_double_click()</method>
+    <prototype>void on_day_selected_double_click()</prototype>
+  </signal>
+  <signal name="prev-month" caller="calendar">
+    <method>signal_prev_month()</method>
+    <prototype>void on_prev_month()</prototype>
+  </signal>
+  <signal name="next-month" caller="calendar">
+    <method>signal_next_month()</method>
+    <prototype>void on_next_month()</prototype>
+  </signal>
+  <signal name="prev-year" caller="calendar">
+    <method>signal_prev_year()</method>
+    <prototype>void on_prev_year()</prototype>
+  </signal>
+  <signal name="next-year" caller="calendar">
+    <method>signal_next_year()</method>
+    <prototype>void on_next_year()</prototype>
+  </signal>
+  <signal name="editing-done" caller="celleditable">
+    <method>signal_editing_done()</method>
+    <prototype>void on_editing_done()</prototype>
+  </signal>
+  <signal name="remove-widget" caller="celleditable">
+    <method>signal_remove_widget()</method>
+    <prototype>void on_remove_widget()</prototype>
+  </signal>
+  <signal name="editing-canceled" caller="cellrenderer">
+    <method>signal_editing_canceled()</method>
+    <prototype>void on_editing_canceled()</prototype>
+  </signal>
+  <signal name="editing-started" caller="cellrenderer">
+    <method>signal_editing_started()</method>
+    <prototype>void on_editing_started(CellEditable* editable, const Glib::ustring&amp; path)</prototype>
+  </signal>
+  <signal name="accel-edited" caller="cellrendereraccel">
+    <method>signal_accel_edited()</method>
+    <prototype>void on_accel_edited(const Glib::ustring&amp; path_string, guint accel_key, Gdk::ModifierType accel_mods, guint hardware_keycode)</prototype>
+  </signal>
+  <signal name="accel-cleared" caller="cellrendereraccel">
+    <method>signal_accel_cleared()</method>
+    <prototype>void on_accel_cleared(const Glib::ustring&amp; path_string)</prototype>
+  </signal>
+  <signal name="edited" caller="cellrenderertext">
+    <method>signal_edited()</method>
+    <prototype>void on_edited(const Glib::ustring&amp; path, const Glib::ustring&amp; new_text)</prototype>
+  </signal>
+  <signal name="toggled" caller="cellrenderertoggle">
+    <method>signal_toggled()</method>
+    <prototype>void on_toggled(const Glib::ustring&amp; path)</prototype>
+  </signal>
+  <signal name="toggled" caller="checkmenuitem">
+    <method>signal_toggled()</method>
+    <prototype>void on_toggled()</prototype>
+  </signal>
+  <signal name="color-set" caller="colorbutton">
+    <method>signal_color_set()</method>
+    <prototype>void on_color_set()</prototype>
+  </signal>
+  <signal name="color-activated" caller="colorchooser">
+    <method>signal_color_activated()</method>
+    <prototype>void on_color_activated(const Gdk::RGBA&amp; color)</prototype>
+  </signal>
+  <signal name="color-changed" caller="colorselection">
+    <method>signal_color_changed()</method>
+    <prototype>void on_color_changed()</prototype>
+  </signal>
+  <signal name="changed" caller="combobox">
+    <method>signal_changed()</method>
+    <prototype>void on_changed()</prototype>
+  </signal>
+  <signal name="add" caller="container">
+    <method>signal_add()</method>
+    <prototype>void on_add(Widget* widget)</prototype>
+  </signal>
+  <signal name="remove" caller="container">
+    <method>signal_remove()</method>
+    <prototype>void on_remove(Widget* widget)</prototype>
+  </signal>
+  <signal name="check-resize" caller="container">
+    <method>signal_check_resize()</method>
+    <prototype>void on_check_resize()</prototype>
+  </signal>
+  <signal name="set-focus-child" caller="container">
+    <method>signal_set_focus_child()</method>
+    <prototype>void on_set_focus_child(Widget* widget)</prototype>
+  </signal>
+  <signal name="response" caller="dialog">
+    <method>signal_response()</method>
+    <prototype>void on_response(int response_id)</prototype>
+  </signal>
+  <signal name="insert-text" caller="editable">
+    <method>signal_insert_text()</method>
+    <prototype>void on_insert_text(const Glib::ustring&amp; text, int* position)</prototype>
+  </signal>
+  <signal name="delete-text" caller="editable">
+    <method>signal_delete_text()</method>
+    <prototype>void on_delete_text(int start_pos, int end_pos)</prototype>
+  </signal>
+  <signal name="changed" caller="editable">
+    <method>signal_changed()</method>
+    <prototype>void on_changed()</prototype>
+  </signal>
+  <signal name="populate-popup" caller="entry">
+    <method>signal_populate_popup()</method>
+    <prototype>void on_populate_popup(Menu* menu)</prototype>
+  </signal>
+  <signal name="insert-at-cursor" caller="entry">
+    <method>signal_insert_at_cursor()</method>
+    <prototype>void on_insert_at_cursor(const Glib::ustring&amp; str)</prototype>
+  </signal>
+  <signal name="activate" caller="entry">
+    <method>signal_activate()</method>
+    <prototype>void on_activate()</prototype>
+  </signal>
+  <signal name="inserted-text" caller="entrybuffer">
+    <method>signal_inserted_text()</method>
+    <prototype>void on_inserted_text(guint position, const gchar* chars, guint n_chars)</prototype>
+  </signal>
+  <signal name="deleted-text" caller="entrybuffer">
+    <method>signal_deleted_text()</method>
+    <prototype>void on_deleted_text(guint position, guint n_chars)</prototype>
+  </signal>
+  <signal name="action-activated" caller="entrycompletion">
+    <method>signal_action_activated()</method>
+    <prototype>void on_action_activated(int index)</prototype>
+  </signal>
+  <signal name="insert-prefix" caller="entrycompletion">
+    <method>signal_insert_prefix()</method>
+    <prototype>bool on_insert_prefix(const Glib::ustring&amp; prefix)</prototype>
+  </signal>
+  <signal name="file-set" caller="filechooserbutton">
+    <method>signal_file_set()</method>
+    <prototype>void on_file_set()</prototype>
+  </signal>
+  <signal name="child-activated" caller="flowbox">
+    <method>signal_child_activated()</method>
+    <prototype>void on_child_activated(FlowBoxChild* child)</prototype>
+  </signal>
+  <signal name="selected-children-changed" caller="flowbox">
+    <method>signal_selected_children_changed()</method>
+    <prototype>void on_selected_children_changed()</prototype>
+  </signal>
+  <signal name="activate" caller="flowboxchild">
+    <method>signal_activate()</method>
+    <prototype>void on_activate()</prototype>
+  </signal>
+  <signal name="font-set" caller="fontbutton">
+    <method>signal_font_set()</method>
+    <prototype>void on_font_set()</prototype>
+  </signal>
+  <signal name="create-context" caller="glarea">
+    <method>signal_create_context()</method>
+    <prototype>Glib::RefPtr&lt;Gdk::GLContext&gt; on_create_context()</prototype>
+  </signal>
+  <signal name="render" caller="glarea">
+    <method>signal_render()</method>
+    <prototype>bool on_render(const Glib::RefPtr&lt;Gdk::GLContext&gt;&amp; context)</prototype>
+  </signal>
+  <signal name="resize" caller="glarea">
+    <method>signal_resize()</method>
+    <prototype>void on_resize(int width, int height)</prototype>
+  </signal>
+  <signal name="child-attached" caller="handlebox">
+    <method>signal_child_attached()</method>
+    <prototype>void on_child_attached(Widget* child)</prototype>
+  </signal>
+  <signal name="child-detached" caller="handlebox">
+    <method>signal_child_detached()</method>
+    <prototype>void on_child_detached(Widget* child)</prototype>
+  </signal>
+  <signal name="changed" caller="icontheme">
+    <method>signal_changed()</method>
+    <prototype>void on_changed()</prototype>
+  </signal>
+  <signal name="item-activated" caller="iconview">
+    <method>signal_item_activated()</method>
+    <prototype>void on_item_activated(const TreeModel::Path&amp; path)</prototype>
+  </signal>
+  <signal name="selection-changed" caller="iconview">
+    <method>signal_selection_changed()</method>
+    <prototype>void on_selection_changed()</prototype>
+  </signal>
+  <signal name="response" caller="infobar">
+    <method>signal_response()</method>
+    <prototype>void on_response(int response_id)</prototype>
+  </signal>
+  <signal name="populate-popup" caller="label">
+    <method>signal_populate_popup()</method>
+    <prototype>void on_populate_popup(Menu* menu)</prototype>
+  </signal>
+  <signal name="offset-changed" caller="levelbar">
+    <method>signal_offset_changed()</method>
+    <prototype>void on_offset_changed(const Glib::ustring&amp; name)</prototype>
+  </signal>
+  <signal name="activate-link" caller="linkbutton">
+    <method>signal_activate_link()</method>
+    <prototype>bool on_activate_link()</prototype>
+  </signal>
+  <signal name="row-selected" caller="listbox">
+    <method>signal_row_selected()</method>
+    <prototype>void on_row_selected(ListBoxRow* row)</prototype>
+  </signal>
+  <signal name="row-activated" caller="listbox">
+    <method>signal_row_activated()</method>
+    <prototype>void on_row_activated(ListBoxRow* row)</prototype>
+  </signal>
+  <signal name="activate" caller="menuitem">
+    <method>signal_activate()</method>
+    <prototype>void on_activate()</prototype>
+  </signal>
+  <signal name="activate-item" caller="menuitem">
+    <method>signal_activate_item()</method>
+    <prototype>void on_activate_item()</prototype>
+  </signal>
+  <signal name="toggle-size-request" caller="menuitem">
+    <method>signal_toggle_size_request()</method>
+    <prototype>void on_toggle_size_request(int* requisition)</prototype>
+  </signal>
+  <signal name="toggle-size-allocate" caller="menuitem">
+    <method>signal_toggle_size_allocate()</method>
+    <prototype>void on_toggle_size_allocate(int allocation)</prototype>
+  </signal>
+  <signal name="deactivate" caller="menushell">
+    <method>signal_deactivate()</method>
+    <prototype>void on_deactivate()</prototype>
+  </signal>
+  <signal name="selection-done" caller="menushell">
+    <method>signal_selection_done()</method>
+    <prototype>void on_selection_done()</prototype>
+  </signal>
+  <signal name="move-selected" caller="menushell">
+    <method>signal_move_selected()</method>
+    <prototype>gboolean on_move_selected(int distance)</prototype>
+  </signal>
+  <signal name="show-menu" caller="menutoolbutton">
+    <method>signal_show_menu()</method>
+    <prototype>void on_show_menu()</prototype>
+  </signal>
+  <signal name="switch-page" caller="notebook">
+    <method>signal_switch_page()</method>
+    <prototype>void on_switch_page(Widget* page, guint page_number)</prototype>
+  </signal>
+  <signal name="get-child-position" caller="overlay">
+    <method>signal_get_child_position()</method>
+    <prototype>bool on_get_child_position(Gtk::Widget* widget, Gdk::Rectangle&amp; allocation)</prototype>
+  </signal>
+  <signal name="closed" caller="popover">
+    <method>signal_closed()</method>
+    <prototype>void on_closed()</prototype>
+  </signal>
+  <signal name="done" caller="printoperation">
+    <method>signal_done()</method>
+    <prototype>void on_done(PrintOperationResult result)</prototype>
+  </signal>
+  <signal name="begin-print" caller="printoperation">
+    <method>signal_begin_print()</method>
+    <prototype>void on_begin_print(const Glib::RefPtr&lt;PrintContext&gt;&amp; context)</prototype>
+  </signal>
+  <signal name="paginate" caller="printoperation">
+    <method>signal_paginate()</method>
+    <prototype>bool on_paginate(const Glib::RefPtr&lt;PrintContext&gt;&amp; context)</prototype>
+  </signal>
+  <signal name="request-page-setup" caller="printoperation">
+    <method>signal_request_page_setup()</method>
+    <prototype>void on_request_page_setup(const Glib::RefPtr&lt;PrintContext&gt;&amp; context, int page_no, const Glib::RefPtr&lt;PageSetup&gt;&amp; setup)</prototype>
+  </signal>
+  <signal name="draw-page" caller="printoperation">
+    <method>signal_draw_page()</method>
+    <prototype>void on_draw_page(const Glib::RefPtr&lt;PrintContext&gt;&amp; context, int page_nr)</prototype>
+  </signal>
+  <signal name="end-print" caller="printoperation">
+    <method>signal_end_print()</method>
+    <prototype>void on_end_print(const Glib::RefPtr&lt;PrintContext&gt;&amp; context)</prototype>
+  </signal>
+  <signal name="status-changed" caller="printoperation">
+    <method>signal_status_changed()</method>
+    <prototype>void on_status_changed()</prototype>
+  </signal>
+  <signal name="create-custom-widget" caller="printoperation">
+    <method>signal_create_custom_widget()</method>
+    <prototype>Widget* on_create_custom_widget()</prototype>
+  </signal>
+  <signal name="custom-widget-apply" caller="printoperation">
+    <method>signal_custom_widget_apply()</method>
+    <prototype>void on_custom_widget_apply(Widget* widget)</prototype>
+  </signal>
+  <signal name="preview" caller="printoperation">
+    <method>signal_preview()</method>
+    <prototype>bool on_preview(const Glib::RefPtr&lt;PrintOperationPreview&gt;&amp; preview, const Glib::RefPtr&lt;PrintContext&gt;&amp; context, Window* parent)</prototype>
+  </signal>
+  <signal name="ready" caller="printoperationpreview">
+    <method>signal_ready()</method>
+    <prototype>void on_ready(const Glib::RefPtr&lt;PrintContext&gt;&amp; context)</prototype>
+  </signal>
+  <signal name="got-page-size" caller="printoperationpreview">
+    <method>signal_got_page_size()</method>
+    <prototype>void on_got_page_size(const Glib::RefPtr&lt;PrintContext&gt;&amp; context, const Glib::RefPtr&lt;PageSetup&gt;&amp; page_setup)</prototype>
+  </signal>
+  <signal name="changed" caller="radioaction">
+    <method>signal_changed()</method>
+    <prototype>void on_changed(const Glib::RefPtr&lt;RadioAction&gt;&amp; current)</prototype>
+  </signal>
+  <signal name="group-changed" caller="radiobutton">
+    <method>signal_group_changed()</method>
+    <prototype>void on_group_changed()</prototype>
+  </signal>
+  <signal name="group-changed" caller="radiomenuitem">
+    <method>signal_group_changed()</method>
+    <prototype>void on_group_changed()</prototype>
+  </signal>
+  <signal name="value-changed" caller="range">
+    <method>signal_value_changed()</method>
+    <prototype>void on_value_changed()</prototype>
+  </signal>
+  <signal name="adjust-bounds" caller="range">
+    <method>signal_adjust_bounds()</method>
+    <prototype>void on_adjust_bounds(double new_value)</prototype>
+  </signal>
+  <signal name="move-slider" caller="range">
+    <method>signal_move_slider()</method>
+    <prototype>void on_move_slider(ScrollType scroll)</prototype>
+  </signal>
+  <signal name="change-value" caller="range">
+    <method>signal_change_value()</method>
+    <prototype>bool on_change_value(ScrollType scroll, double new_value)</prototype>
+  </signal>
+  <signal name="selection-changed" caller="recentchooser">
+    <method>signal_selection_changed()</method>
+    <prototype>void on_selection_changed()</prototype>
+  </signal>
+  <signal name="item-activated" caller="recentchooser">
+    <method>signal_item_activated()</method>
+    <prototype>void on_item_activated()</prototype>
+  </signal>
+  <signal name="changed" caller="recentmanager">
+    <method>signal_changed()</method>
+    <prototype>void on_changed()</prototype>
+  </signal>
+  <signal name="format-value" caller="scale">
+    <method>signal_format_value()</method>
+    <prototype>Glib::ustring on_format_value(double value)</prototype>
+  </signal>
+  <signal name="value-changed" caller="scalebutton">
+    <method>signal_value_changed()</method>
+    <prototype>void on_value_changed(double value)</prototype>
+  </signal>
+  <signal name="input" caller="spinbutton">
+    <method>signal_input()</method>
+    <prototype>int on_input(double* new_value)</prototype>
+  </signal>
+  <signal name="output" caller="spinbutton">
+    <method>signal_output()</method>
+    <prototype>bool on_output()</prototype>
+  </signal>
+  <signal name="wrapped" caller="spinbutton">
+    <method>signal_wrapped()</method>
+    <prototype>void on_wrapped()</prototype>
+  </signal>
+  <signal name="value-changed" caller="spinbutton">
+    <method>signal_value_changed()</method>
+    <prototype>void on_value_changed()</prototype>
+  </signal>
+  <signal name="text-pushed" caller="statusbar">
+    <method>signal_text_pushed()</method>
+    <prototype>void on_text_pushed(guint context_id, const Glib::ustring&amp; text)</prototype>
+  </signal>
+  <signal name="text-popped" caller="statusbar">
+    <method>signal_text_popped()</method>
+    <prototype>void on_text_popped(guint context_id, const Glib::ustring&amp; text)</prototype>
+  </signal>
+  <signal name="size-changed" caller="statusicon">
+    <method>signal_size_changed()</method>
+    <prototype>bool on_size_changed(int size)</prototype>
+  </signal>
+  <signal name="activate" caller="statusicon">
+    <method>signal_activate()</method>
+    <prototype>void on_activate()</prototype>
+  </signal>
+  <signal name="popup-menu" caller="statusicon">
+    <method>signal_popup_menu()</method>
+    <prototype>void on_popup_menu(guint button, guint32 activate_time)</prototype>
+  </signal>
+  <signal name="button-press-event" caller="statusicon">
+    <method>signal_button_press_event()</method>
+    <prototype>bool on_button_press_event(GdkEventButton* event)</prototype>
+  </signal>
+  <signal name="button-release-event" caller="statusicon">
+    <method>signal_button_release_event()</method>
+    <prototype>bool on_button_release_event(GdkEventButton* event)</prototype>
+  </signal>
+  <signal name="scroll-event" caller="statusicon">
+    <method>signal_scroll_event()</method>
+    <prototype>bool on_scroll_event(GdkEventScroll* event)</prototype>
+  </signal>
+  <signal name="query-tooltip" caller="statusicon">
+    <method>signal_query_tooltip()</method>
+    <prototype>bool on_query_tooltip(int x, int y, bool keyboard_mode, const Glib::RefPtr&lt;Tooltip&gt;&amp; tooltip)</prototype>
+  </signal>
+  <signal name="changed" caller="stylecontext">
+    <method>signal_changed()</method>
+    <prototype>void on_changed()</prototype>
+  </signal>
+  <signal name="state-set" caller="switch">
+    <method>signal_state_set()</method>
+    <prototype>bool on_state_set(bool state)</prototype>
+  </signal>
+  <signal name="insert" caller="textbuffer">
+    <method>signal_insert()</method>
+    <prototype>void on_insert(const TextBuffer::iterator&amp; pos, const Glib::ustring&amp; text, int bytes)</prototype>
+  </signal>
+  <signal name="insert-pixbuf" caller="textbuffer">
+    <method>signal_insert_pixbuf()</method>
+    <prototype>void on_insert_pixbuf(const TextBuffer::iterator&amp; pos, const Glib::RefPtr&lt;Gdk::Pixbuf&gt;&amp; pixbuf)</prototype>
+  </signal>
+  <signal name="insert-child-anchor" caller="textbuffer">
+    <method>signal_insert_child_anchor()</method>
+    <prototype>void on_insert_child_anchor(const TextBuffer::iterator&amp; pos, const Glib::RefPtr&lt;ChildAnchor&gt;&amp; anchor)</prototype>
+  </signal>
+  <signal name="erase" caller="textbuffer">
+    <method>signal_erase()</method>
+    <prototype>void on_erase(const TextBuffer::iterator&amp; range_start, const TextBuffer::iterator&amp; range_end)</prototype>
+  </signal>
+  <signal name="changed" caller="textbuffer">
+    <method>signal_changed()</method>
+    <prototype>void on_changed()</prototype>
+  </signal>
+  <signal name="modified-changed" caller="textbuffer">
+    <method>signal_modified_changed()</method>
+    <prototype>void on_modified_changed()</prototype>
+  </signal>
+  <signal name="mark-set" caller="textbuffer">
+    <method>signal_mark_set()</method>
+    <prototype>void on_mark_set(const TextBuffer::iterator&amp; location, const Glib::RefPtr&lt;TextBuffer::Mark&gt;&amp; mark)</prototype>
+  </signal>
+  <signal name="mark-deleted" caller="textbuffer">
+    <method>signal_mark_deleted()</method>
+    <prototype>void on_mark_deleted(const Glib::RefPtr&lt;TextBuffer::Mark&gt;&amp; mark)</prototype>
+  </signal>
+  <signal name="apply-tag" caller="textbuffer">
+    <method>signal_apply_tag()</method>
+    <prototype>void on_apply_tag(const Glib::RefPtr&lt;TextBuffer::Tag&gt;&amp; tag, const TextBuffer::iterator&amp; range_begin, const TextBuffer::iterator&amp; range_end)</prototype>
+  </signal>
+  <signal name="remove-tag" caller="textbuffer">
+    <method>signal_remove_tag()</method>
+    <prototype>void on_remove_tag(const Glib::RefPtr&lt;TextBuffer::Tag&gt;&amp; tag, const TextBuffer::iterator&amp; range_begin, const TextBuffer::iterator&amp; range_end)</prototype>
+  </signal>
+  <signal name="begin-user-action" caller="textbuffer">
+    <method>signal_begin_user_action()</method>
+    <prototype>void on_begin_user_action()</prototype>
+  </signal>
+  <signal name="end-user-action" caller="textbuffer">
+    <method>signal_end_user_action()</method>
+    <prototype>void on_end_user_action()</prototype>
+  </signal>
+  <signal name="paste-done" caller="textbuffer">
+    <method>signal_paste_done()</method>
+    <prototype>void on_paste_done(const Glib::RefPtr&lt;Gtk::Clipboard&gt;&amp; clipboard)</prototype>
+  </signal>
+  <signal name="event" caller="texttag">
+    <method>signal_event()</method>
+    <prototype>bool on_event(const Glib::RefPtr&lt;Glib::Object&gt;&amp; event_object, GdkEvent* gdk_event, const TextIter&amp; iter)</prototype>
+  </signal>
+  <signal name="tag-changed" caller="texttagtable">
+    <method>signal_tag_changed()</method>
+    <prototype>void on_tag_changed(const Glib::RefPtr&lt;TextTag&gt;&amp; tag, bool size_changed)</prototype>
+  </signal>
+  <signal name="tag-added" caller="texttagtable">
+    <method>signal_tag_added()</method>
+    <prototype>void on_tag_added(const Glib::RefPtr&lt;TextTag&gt;&amp; tag)</prototype>
+  </signal>
+  <signal name="tag-removed" caller="texttagtable">
+    <method>signal_tag_removed()</method>
+    <prototype>void on_tag_removed(const Glib::RefPtr&lt;TextTag&gt;&amp; tag)</prototype>
+  </signal>
+  <signal name="populate-popup" caller="textview">
+    <method>signal_populate_popup()</method>
+    <prototype>void on_populate_popup(Menu* menu)</prototype>
+  </signal>
+  <signal name="set-anchor" caller="textview">
+    <method>signal_set_anchor()</method>
+    <prototype>void on_set_anchor()</prototype>
+  </signal>
+  <signal name="insert-at-cursor" caller="textview">
+    <method>signal_insert_at_cursor()</method>
+    <prototype>void on_insert_at_cursor(const Glib::ustring&amp; str)</prototype>
+  </signal>
+  <signal name="toggled" caller="toggleaction">
+    <method>signal_toggled()</method>
+    <prototype>void on_toggled()</prototype>
+  </signal>
+  <signal name="toggled" caller="togglebutton">
+    <method>signal_toggled()</method>
+    <prototype>void on_toggled()</prototype>
+  </signal>
+  <signal name="toggled" caller="toggletoolbutton">
+    <method>signal_toggled()</method>
+    <prototype>void on_toggled()</prototype>
+  </signal>
+  <signal name="orientation-changed" caller="toolbar">
+    <method>signal_orientation_changed()</method>
+    <prototype>void on_orientation_changed(Orientation orientation)</prototype>
+  </signal>
+  <signal name="toolbar-style-changed" caller="toolbar">
+    <method>signal_toolbar_style_changed()</method>
+    <prototype>void on_toolbar_style_changed(ToolbarStyle style)</prototype>
+  </signal>
+  <signal name="popup-context-menu" caller="toolbar">
+    <method>signal_popup_context_menu()</method>
+    <prototype>bool on_popup_context_menu(int x, int y, int button_number)</prototype>
+  </signal>
+  <signal name="clicked" caller="toolbutton">
+    <method>signal_clicked()</method>
+    <prototype>void on_clicked()</prototype>
+  </signal>
+  <signal name="create-menu-proxy" caller="toolitem">
+    <method>signal_create_menu_proxy()</method>
+    <prototype>bool on_create_menu_proxy()</prototype>
+  </signal>
+  <signal name="toolbar-reconfigured" caller="toolitem">
+    <method>signal_toolbar_reconfigured()</method>
+    <prototype>void on_toolbar_reconfigured()</prototype>
+  </signal>
+  <signal name="row-changed" caller="treemodel">
+    <method>signal_row_changed()</method>
+    <prototype>void on_row_changed(const TreeModel::Path&amp; path, const TreeModel::iterator&amp; iter)</prototype>
+  </signal>
+  <signal name="row-inserted" caller="treemodel">
+    <method>signal_row_inserted()</method>
+    <prototype>void on_row_inserted(const TreeModel::Path&amp; path, const TreeModel::iterator&amp; iter)</prototype>
+  </signal>
+  <signal name="row-has-child-toggled" caller="treemodel">
+    <method>signal_row_has_child_toggled()</method>
+    <prototype>void on_row_has_child_toggled(const TreeModel::Path&amp; path, const TreeModel::iterator&amp; iter)</prototype>
+  </signal>
+  <signal name="row-deleted" caller="treemodel">
+    <method>signal_row_deleted()</method>
+    <prototype>void on_row_deleted(const TreeModel::Path&amp; path)</prototype>
+  </signal>
+  <signal name="rows-reordered" caller="treemodel">
+    <method>signal_rows_reordered()</method>
+    <prototype>void on_rows_reordered(const TreeModel::Path&amp; path, const TreeModel::iterator&amp; iter, int* new_order)</prototype>
+  </signal>
+  <signal name="changed" caller="treeselection">
+    <method>signal_changed()</method>
+    <prototype>void on_changed()</prototype>
+  </signal>
+  <signal name="sort-column-changed" caller="treesortable">
+    <method>signal_sort_column_changed()</method>
+    <prototype>void on_sort_column_changed()</prototype>
+  </signal>
+  <signal name="row-activated" caller="treeview">
+    <method>signal_row_activated()</method>
+    <prototype>void on_row_activated(const TreeModel::Path&amp; path, TreeViewColumn* column)</prototype>
+  </signal>
+  <signal name="test-expand-row" caller="treeview">
+    <method>signal_test_expand_row()</method>
+    <prototype>bool on_test_expand_row(const TreeModel::iterator&amp; iter, const TreeModel::Path&amp; path)</prototype>
+  </signal>
+  <signal name="test-collapse-row" caller="treeview">
+    <method>signal_test_collapse_row()</method>
+    <prototype>bool on_test_collapse_row(const TreeModel::iterator&amp; iter, const TreeModel::Path&amp; path)</prototype>
+  </signal>
+  <signal name="row-expanded" caller="treeview">
+    <method>signal_row_expanded()</method>
+    <prototype>void on_row_expanded(const TreeModel::iterator&amp; iter, const TreeModel::Path&amp; path)</prototype>
+  </signal>
+  <signal name="row-collapsed" caller="treeview">
+    <method>signal_row_collapsed()</method>
+    <prototype>void on_row_collapsed(const TreeModel::iterator&amp; iter, const TreeModel::Path&amp; path)</prototype>
+  </signal>
+  <signal name="cursor-changed" caller="treeview">
+    <method>signal_cursor_changed()</method>
+    <prototype>void on_cursor_changed()</prototype>
+  </signal>
+  <signal name="columns-changed" caller="treeview">
+    <method>signal_columns_changed()</method>
+    <prototype>void on_columns_changed()</prototype>
+  </signal>
+  <signal name="clicked" caller="treeviewcolumn">
+    <method>signal_clicked()</method>
+    <prototype>void on_clicked()</prototype>
+  </signal>
+  <signal name="add-widget" caller="uimanager">
+    <method>signal_add_widget()</method>
+    <prototype>void on_add_widget(Widget* widget)</prototype>
+  </signal>
+  <signal name="actions-changed" caller="uimanager">
+    <method>signal_actions_changed()</method>
+    <prototype>void on_actions_changed()</prototype>
+  </signal>
+  <signal name="connect-proxy" caller="uimanager">
+    <method>signal_connect_proxy()</method>
+    <prototype>void on_connect_proxy(const Glib::RefPtr&lt;Action&gt;&amp; action, Widget* widget)</prototype>
+  </signal>
+  <signal name="disconnect-proxy" caller="uimanager">
+    <method>signal_disconnect_proxy()</method>
+    <prototype>void on_disconnect_proxy(const Glib::RefPtr&lt;Action&gt;&amp; action, Widget* widget)</prototype>
+  </signal>
+  <signal name="pre-activate" caller="uimanager">
+    <method>signal_pre_activate()</method>
+    <prototype>void on_pre_activate(const Glib::RefPtr&lt;Action&gt;&amp; action)</prototype>
+  </signal>
+  <signal name="post-activate" caller="uimanager">
+    <method>signal_post_activate()</method>
+    <prototype>void on_post_activate(const Glib::RefPtr&lt;Action&gt;&amp; action)</prototype>
+  </signal>
+  <signal name="show" caller="widget">
+    <method>signal_show()</method>
+    <prototype>void on_show()</prototype>
+  </signal>
+  <signal name="hide" caller="widget">
+    <method>signal_hide()</method>
+    <prototype>void on_hide()</prototype>
+  </signal>
+  <signal name="map" caller="widget">
+    <method>signal_map()</method>
+    <prototype>void on_map()</prototype>
+  </signal>
+  <signal name="unmap" caller="widget">
+    <method>signal_unmap()</method>
+    <prototype>void on_unmap()</prototype>
+  </signal>
+  <signal name="realize" caller="widget">
+    <method>signal_realize()</method>
+    <prototype>void on_realize()</prototype>
+  </signal>
+  <signal name="unrealize" caller="widget">
+    <method>signal_unrealize()</method>
+    <prototype>void on_unrealize()</prototype>
+  </signal>
+  <signal name="size-allocate" caller="widget">
+    <method>signal_size_allocate()</method>
+    <prototype>void on_size_allocate(Allocation&amp; allocation)</prototype>
+  </signal>
+  <signal name="state-changed" caller="widget">
+    <method>signal_state_changed()</method>
+    <prototype>void on_state_changed(Gtk::StateType previous_state)</prototype>
+  </signal>
+  <signal name="parent-changed" caller="widget">
+    <method>signal_parent_changed()</method>
+    <prototype>void on_parent_changed(Widget* previous_parent)</prototype>
+  </signal>
+  <signal name="hierarchy-changed" caller="widget">
+    <method>signal_hierarchy_changed()</method>
+    <prototype>void on_hierarchy_changed(Widget* previous_toplevel)</prototype>
+  </signal>
+  <signal name="style-updated" caller="widget">
+    <method>signal_style_updated()</method>
+    <prototype>void on_style_updated()</prototype>
+  </signal>
+  <signal name="direction-changed" caller="widget">
+    <method>signal_direction_changed()</method>
+    <prototype>void on_direction_changed(TextDirection direction)</prototype>
+  </signal>
+  <signal name="grab-notify" caller="widget">
+    <method>signal_grab_notify()</method>
+    <prototype>void on_grab_notify(bool was_grabbed)</prototype>
+  </signal>
+  <signal name="child-notify" caller="widget">
+    <method>signal_child_notify()</method>
+    <prototype>void on_child_notify(GParamSpec* pspec)</prototype>
+  </signal>
+  <signal name="mnemonic-activate" caller="widget">
+    <method>signal_mnemonic_activate()</method>
+    <prototype>bool on_mnemonic_activate(bool group_cycling)</prototype>
+  </signal>
+  <signal name="grab-focus" caller="widget">
+    <method>signal_grab_focus()</method>
+    <prototype>void on_grab_focus()</prototype>
+  </signal>
+  <signal name="focus" caller="widget">
+    <method>signal_focus()</method>
+    <prototype>bool on_focus(DirectionType direction)</prototype>
+  </signal>
+  <signal name="event" caller="widget">
+    <method>signal_event()</method>
+    <prototype>bool on_event(GdkEvent* gdk_event)</prototype>
+  </signal>
+  <signal name="button-press-event" caller="widget">
+    <method>signal_button_press_event()</method>
+    <prototype>bool on_button_press_event(GdkEventButton* button_event)</prototype>
+  </signal>
+  <signal name="button-release-event" caller="widget">
+    <method>signal_button_release_event()</method>
+    <prototype>bool on_button_release_event(GdkEventButton* release_event)</prototype>
+  </signal>
+  <signal name="scroll-event" caller="widget">
+    <method>signal_scroll_event()</method>
+    <prototype>bool on_scroll_event(GdkEventScroll* scroll_event)</prototype>
+  </signal>
+  <signal name="motion-notify-event" caller="widget">
+    <method>signal_motion_notify_event()</method>
+    <prototype>bool on_motion_notify_event(GdkEventMotion* motion_event)</prototype>
+  </signal>
+  <signal name="delete-event" caller="widget">
+    <method>signal_delete_event()</method>
+    <prototype>bool on_delete_event(GdkEventAny* any_event)</prototype>
+  </signal>
+  <signal name="draw" caller="widget">
+    <method>signal_draw()</method>
+    <prototype>bool on_draw(const ::Cairo::RefPtr&lt; ::Cairo::Context&gt;&amp; cr)</prototype>
+  </signal>
+  <signal name="key-press-event" caller="widget">
+    <method>signal_key_press_event()</method>
+    <prototype>bool on_key_press_event(GdkEventKey* key_event)</prototype>
+  </signal>
+  <signal name="key-release-event" caller="widget">
+    <method>signal_key_release_event()</method>
+    <prototype>bool on_key_release_event(GdkEventKey* key_event)</prototype>
+  </signal>
+  <signal name="enter-notify-event" caller="widget">
+    <method>signal_enter_notify_event()</method>
+    <prototype>bool on_enter_notify_event(GdkEventCrossing* crossing_event)</prototype>
+  </signal>
+  <signal name="leave-notify-event" caller="widget">
+    <method>signal_leave_notify_event()</method>
+    <prototype>bool on_leave_notify_event(GdkEventCrossing* crossing_event)</prototype>
+  </signal>
+  <signal name="configure-event" caller="widget">
+    <method>signal_configure_event()</method>
+    <prototype>bool on_configure_event(GdkEventConfigure* configure_event)</prototype>
+  </signal>
+  <signal name="focus-in-event" caller="widget">
+    <method>signal_focus_in_event()</method>
+    <prototype>bool on_focus_in_event(GdkEventFocus* focus_event)</prototype>
+  </signal>
+  <signal name="focus-out-event" caller="widget">
+    <method>signal_focus_out_event()</method>
+    <prototype>bool on_focus_out_event(GdkEventFocus* gdk_event)</prototype>
+  </signal>
+  <signal name="map-event" caller="widget">
+    <method>signal_map_event()</method>
+    <prototype>bool on_map_event(GdkEventAny* any_event)</prototype>
+  </signal>
+  <signal name="unmap-event" caller="widget">
+    <method>signal_unmap_event()</method>
+    <prototype>bool on_unmap_event(GdkEventAny* any_event)</prototype>
+  </signal>
+  <signal name="property-notify-event" caller="widget">
+    <method>signal_property_notify_event()</method>
+    <prototype>bool on_property_notify_event(GdkEventProperty* property_event)</prototype>
+  </signal>
+  <signal name="selection-clear-event" caller="widget">
+    <method>signal_selection_clear_event()</method>
+    <prototype>bool on_selection_clear_event(GdkEventSelection* selection_event)</prototype>
+  </signal>
+  <signal name="selection-request-event" caller="widget">
+    <method>signal_selection_request_event()</method>
+    <prototype>bool on_selection_request_event(GdkEventSelection* selection_event)</prototype>
+  </signal>
+  <signal name="selection-notify-event" caller="widget">
+    <method>signal_selection_notify_event()</method>
+    <prototype>bool on_selection_notify_event(GdkEventSelection* selection_event)</prototype>
+  </signal>
+  <signal name="proximity-in-event" caller="widget">
+    <method>signal_proximity_in_event()</method>
+    <prototype>bool on_proximity_in_event(GdkEventProximity* proximity_event)</prototype>
+  </signal>
+  <signal name="proximity-out-event" caller="widget">
+    <method>signal_proximity_out_event()</method>
+    <prototype>bool on_proximity_out_event(GdkEventProximity* proximity_event)</prototype>
+  </signal>
+  <signal name="visibility-notify-event" caller="widget">
+    <method>signal_visibility_notify_event()</method>
+    <prototype>bool on_visibility_notify_event(GdkEventVisibility* visibility_event)</prototype>
+  </signal>
+  <signal name="window-state-event" caller="widget">
+    <method>signal_window_state_event()</method>
+    <prototype>bool on_window_state_event(GdkEventWindowState* window_state_event)</prototype>
+  </signal>
+  <signal name="selection-get" caller="widget">
+    <method>signal_selection_get()</method>
+    <prototype>void on_selection_get(SelectionData&amp; selection_data, guint info, guint time)</prototype>
+  </signal>
+  <signal name="selection-received" caller="widget">
+    <method>signal_selection_received()</method>
+    <prototype>void on_selection_received(const SelectionData&amp; selection_data, guint time)</prototype>
+  </signal>
+  <signal name="drag-begin" caller="widget">
+    <method>signal_drag_begin()</method>
+    <prototype>void on_drag_begin(const Glib::RefPtr&lt;Gdk::DragContext&gt;&amp; context)</prototype>
+  </signal>
+  <signal name="drag-end" caller="widget">
+    <method>signal_drag_end()</method>
+    <prototype>void on_drag_end(const Glib::RefPtr&lt;Gdk::DragContext&gt;&amp; context)</prototype>
+  </signal>
+  <signal name="drag-data-get" caller="widget">
+    <method>signal_drag_data_get()</method>
+    <prototype>void on_drag_data_get(const Glib::RefPtr&lt;Gdk::DragContext&gt;&amp; context, SelectionData&amp; selection_data, guint info, guint time)</prototype>
+  </signal>
+  <signal name="drag-data-delete" caller="widget">
+    <method>signal_drag_data_delete()</method>
+    <prototype>void on_drag_data_delete(const Glib::RefPtr&lt;Gdk::DragContext&gt;&amp; context)</prototype>
+  </signal>
+  <signal name="drag-leave" caller="widget">
+    <method>signal_drag_leave()</method>
+    <prototype>void on_drag_leave(const Glib::RefPtr&lt;Gdk::DragContext&gt;&amp; context, guint time)</prototype>
+  </signal>
+  <signal name="drag-motion" caller="widget">
+    <method>signal_drag_motion()</method>
+    <prototype>bool on_drag_motion(const Glib::RefPtr&lt;Gdk::DragContext&gt;&amp; context, int x, int y, guint time)</prototype>
+  </signal>
+  <signal name="drag-drop" caller="widget">
+    <method>signal_drag_drop()</method>
+    <prototype>bool on_drag_drop(const Glib::RefPtr&lt;Gdk::DragContext&gt;&amp; context, int x, int y, guint time)</prototype>
+  </signal>
+  <signal name="drag-data-received" caller="widget">
+    <method>signal_drag_data_received()</method>
+    <prototype>void on_drag_data_received(const Glib::RefPtr&lt;Gdk::DragContext&gt;&amp; context, int x, int y, const SelectionData&amp; selection_data, guint info, guint time)</prototype>
+  </signal>
+  <signal name="screen-changed" caller="widget">
+    <method>signal_screen_changed()</method>
+    <prototype>void on_screen_changed(const Glib::RefPtr&lt;Gdk::Screen&gt;&amp; previous_screen)</prototype>
+  </signal>
+  <signal name="set-focus" caller="window">
+    <method>signal_set_focus()</method>
+    <prototype>void on_set_focus(Widget* focus)</prototype>
+  </signal>
+</signals>

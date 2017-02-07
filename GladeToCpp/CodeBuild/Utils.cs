@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GladeConstructor.Parser;
+using System.Xml;
 
 namespace GladeConstructor.CodeBuild
 {
@@ -86,6 +88,7 @@ namespace GladeConstructor.CodeBuild
                     is_pointer = value;
                 }
             }
+
 
         }
     }

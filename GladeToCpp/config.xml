@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<signals>
+		<signal name="clicked">
+			<handler>clicked</handler>
+			<prototype>void callback();</prototype>
+			<method>signal_clicked</method>
+		</signal>
+		<signal name="focus-in-event">
+			<prototype>bool callback(GdkEventFocus *focus_event);</prototype>
+			<method>signal_focus_in_event</method>
+		</signal>
+		<signal name="delete-event">
+			<prototype>bool callback(GdkEventAny* event)</prototype>
+			<method>signal_delete_event</method>
+		</signal>
+	</signals>
+	
+	<objectlist>
+		<object></object>
+	</objectlist>
+</configuration>
